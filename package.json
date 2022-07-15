@@ -6,8 +6,11 @@
     "test": "web-test-runner \"src/**/*.test.tsx\"",
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",
     "lint": "prettier --check \"src/**/*.{js,jsx,ts,tsx}\"",
-    "build-azure": "yarn remove via-keyboards && yarn add https://github.com/the-via/keyboards.git && yarn build"
+    "build-azure": "yarn remove via-keyboards && yarn add https://github.com/the-via/keyboards.git && yarn build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
+  "homepage": "https://horrortroll.github.io/VIA_app",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.3",
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
@@ -20,6 +23,7 @@
     "concurrency": "^0.1.4",
     "connected-react-router": "^6.9.1",
     "downshift": "^6.1.7",
+    "gh-pages": "^4.0.0",
     "json-stringify-pretty-compact": "^3.0.0",
     "lodash.partition": "^4.6.0",
     "pelpi": "https://github.com/the-via/pelpi.git#728a945c7fdf6300e026a3c6e258d4a5eb1e5c9b",
