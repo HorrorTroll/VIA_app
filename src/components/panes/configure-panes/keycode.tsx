@@ -260,7 +260,7 @@ export const Pane: FC = () => {
     return (
       <CustomKeycode
         onClick={() => selectedKey !== null && handleClick('text', 0)}
-        onMouseOver={(_) => setMouseOverDesc('Enter any QMK Keycode')}
+        onMouseOver={(_) => setMouseOverDesc('Nhập bất kỳ QMK Keycode')}
         onMouseOut={(_) => setMouseOverDesc(null)}
       >
         Any

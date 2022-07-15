@@ -90,13 +90,13 @@ export const Pane: FC = () => {
     reader.onload = async () => {
       const saveFile = JSON.parse((reader as any).result.toString());
       if (!isViaSaveFile(saveFile)) {
-        setErrorMessage('Could not load file: invalid data.');
+        setErrorMessage('Không thể nạp tệp tài liệu: dữ liệu không hợp lệ.');
         return;
       }
 
       if (saveFile.vendorProductId !== selectedDefinition.vendorProductId) {
         setErrorMessage(
-          `Could not import layout. This file was created for a different keyboard: ${saveFile.name}`,
+          `Không thể nhập layout. Tệp tài liệu này được tạo ra cho bàn phím khác: ${saveFile.name}`,
         );
         return;
       }
@@ -107,7 +107,7 @@ export const Pane: FC = () => {
         ) > -1
       ) {
         setErrorMessage(
-          'Could not import layout: incorrect number of keys in one or more layers.',
+          'Không thể nhập layout: số lượng nút trong một hoặc nhiều layer không chính xác.',
         );
         return;
       }
@@ -115,7 +115,7 @@ export const Pane: FC = () => {
       if (macros.isFeatureSupported && saveFile.macros) {
         if (saveFile.macros.length !== macros.expressions.length) {
           setErrorMessage(
-            'Could not import layout: incorrect number of macros.',
+            'Không thể nhập layout: số lượng macro không chính xác.',
           );
           return;
         }
@@ -129,7 +129,7 @@ export const Pane: FC = () => {
 
       await dispatch(saveRawKeymapToDevice(keymap, selectedDevice));
 
-      setSuccessMessage('Successfully updated layout!');
+      setSuccessMessage('Đã cập nhật layout thành công!');
     };
 
     reader.readAsBinaryString(file);
@@ -140,15 +140,15 @@ export const Pane: FC = () => {
       <SaveLoadPane>
         <Container>
           <ControlRow>
-            <Label>Save Current Layout</Label>
+            <Label>Lưu Layout hiện tại</Label>
             <Detail>
-              <AccentButton onClick={saveLayout}>Save</AccentButton>
+              <AccentButton onClick={saveLayout}>Lưu</AccentButton>
             </Detail>
           </ControlRow>
           <ControlRow>
-            <Label>Load Saved Layout</Label>
+            <Label>Nạp Layout đã lưu</Label>
             <Detail>
-              <AccentUploadButton onLoad={loadLayout}>Load</AccentUploadButton>
+              <AccentUploadButton onLoad={loadLayout}>Nạp</AccentUploadButton>
             </Detail>
           </ControlRow>
           {errorMessage ? <ErrorMessage>{errorMessage}</ErrorMessage> : null}

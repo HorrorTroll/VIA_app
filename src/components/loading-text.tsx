@@ -7,8 +7,8 @@ const LoadingText = styled.div`
 `;
 
 enum LoadingLabel {
-  Searching = 'Searching for devices...',
-  Loading = 'Loading...',
+  Searching = 'Đang tìm kiếm thiết bị...',
+  Loading = 'Đang tải...',
 }
 
 type Props = {

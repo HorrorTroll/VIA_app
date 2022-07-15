@@ -4,10 +4,12 @@ on:
   push:
     branches:
       - main
+      - vi-VN_translation
   pull_request:
     types: [opened, synchronize, reopened, closed]
     branches:
       - main
+      - vi-VN_translation
   repository_dispatch:
     types: [definition_update]
 

@@ -8,26 +8,26 @@ export default [
   {
     key: 'default',
     component: ConfigurePane,
-    title: 'Configure',
+    title: 'Thiết lập',
     path: '/',
   },
   {
     key: 'test',
     component: Test,
     path: '/test',
-    title: 'Key Tester',
+    title: 'Thử phím',
   },
   {
     key: 'design',
     component: DesignTab,
     path: '/design',
-    title: 'Design',
+    title: 'Thiết kế',
   },
   {
     key: 'settings',
     component: Settings,
     path: '/settings',
-    title: 'Settings',
+    title: 'Cài đặt',
   },
   {
     key: 'debug',

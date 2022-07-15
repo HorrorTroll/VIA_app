@@ -9,5 +9,5 @@ const SvgIcSave24Px: React.VFC<{}> = (props) => (
   </svg>
 );
 
-export const title = 'Save + Load';
+export const title = 'Lưu + Nạp';
 export const component = SvgIcSave24Px;

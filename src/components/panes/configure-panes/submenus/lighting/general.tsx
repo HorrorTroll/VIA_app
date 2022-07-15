@@ -26,12 +26,12 @@ const BacklightControls: [
 ][] = [
   [
     LightingValue.BACKLIGHT_BRIGHTNESS,
-    'Brightness',
+    'Độ sáng',
     {type: 'range', min: 0, max: 255},
   ],
   [
     LightingValue.BACKLIGHT_EFFECT,
-    'Effect',
+    'Hiệu ứng',
     {
       type: 'select',
       getOptions: (definition: VIADefinitionV2 | VIADefinitionV3) =>
@@ -43,7 +43,7 @@ const BacklightControls: [
   ],
   [
     LightingValue.BACKLIGHT_EFFECT_SPEED,
-    'Effect Speed',
+    'Tốc độ hiệu ứng',
     {type: 'range', min: 0, max: 3},
   ],
 ];
@@ -55,12 +55,12 @@ const UnderglowControls: [
 ][] = [
   [
     LightingValue.QMK_RGBLIGHT_BRIGHTNESS,
-    'Underglow Brightness',
+    'Độ sáng LED gầm',
     {type: 'range', min: 0, max: 255},
   ],
   [
     LightingValue.QMK_RGBLIGHT_EFFECT,
-    'Underglow Effect',
+    'Hiệu ứng LED gầm',
     {
       type: 'select',
       getOptions: (definition: VIADefinitionV2 | VIADefinitionV3) =>
@@ -72,7 +72,7 @@ const UnderglowControls: [
   ],
   [
     LightingValue.QMK_RGBLIGHT_EFFECT_SPEED,
-    'Underglow Effect Speed',
+    'Tốc độ hiệu ứng LED gầm',
     {type: 'range', min: 0, max: 3},
   ],
 ];
@@ -163,7 +163,7 @@ export const GeneralPane: FC = () => {
           <LightingControl
             meta={[
               LightingValue.QMK_RGBLIGHT_COLOR,
-              'Underglow Color',
+              'Màu LED gầm',
               {type: 'color'},
             ]}
           />

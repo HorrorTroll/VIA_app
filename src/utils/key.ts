@@ -660,7 +660,7 @@ export function buildLayerMenu(): IKeycodeMenu {
   ];
 
   const menu: IKeycodeMenu = {
-    label: 'Layers',
+    label: 'Mục Layers',
     width: 'label',
     keycodes: [
       {
@@ -739,7 +739,7 @@ export function buildLayerMenu(): IKeycodeMenu {
 export function getKeycodes(): IKeycodeMenu[] {
   return [
     {
-      label: 'Basic',
+      label: 'Mục cơ bản',
       keycodes: [
         {name: '', code: 'KC_NO', title: 'Nothing'},
         {name: '▽', code: 'KC_TRNS', title: 'Pass-through'},
@@ -859,17 +859,17 @@ export function getKeycodes(): IKeycodeMenu[] {
           title: 'Numpad Enter',
         },
         {
-          name: 'Left Shift',
+          name: 'Shift trái',
           code: 'KC_LSFT',
           keys: 'shift',
           width: 2250,
           shortName: 'LShft',
         },
-        {name: 'Right Shift', code: 'KC_RSFT', width: 2750, shortName: 'RShft'},
-        {name: 'Left Ctrl', code: 'KC_LCTL', keys: 'ctrl', width: 1250},
-        {name: 'Right Ctrl', code: 'KC_RCTL', width: 1250, shortName: 'RCtl'},
+        {name: 'Shift phải', code: 'KC_RSFT', width: 2750, shortName: 'RShft'},
+        {name: 'Ctrl trái', code: 'KC_LCTL', keys: 'ctrl', width: 1250},
+        {name: 'Ctrl phải', code: 'KC_RCTL', width: 1250, shortName: 'RCtl'},
         {
-          name: 'Left Win',
+          name: 'Win trái',
           code: 'KC_LGUI',
           keys: 'cmd',
           width: 1250,
@@ -877,19 +877,19 @@ export function getKeycodes(): IKeycodeMenu[] {
         },
         {name: 'Right Win', code: 'KC_RGUI', width: 1250, shortName: 'RWin'},
         {
-          name: 'Left Alt',
+          name: 'Alt trái',
           code: 'KC_LALT',
           keys: 'alt',
           width: 1250,
           shortName: 'LAlt',
         },
-        {name: 'Right Alt', code: 'KC_RALT', width: 1250, shortName: 'RAlt'},
+        {name: 'Alt phải', code: 'KC_RALT', width: 1250, shortName: 'RAlt'},
         {name: 'Space', code: 'KC_SPC', keys: 'space', width: 6250},
         {name: 'Menu', code: 'KC_APP', width: 1250, shortName: 'RApp'},
-        {name: 'Left', code: 'KC_LEFT', keys: 'left', shortName: '←'},
-        {name: 'Down', code: 'KC_DOWN', keys: 'down', shortName: '↓'},
-        {name: 'Up', code: 'KC_UP', keys: 'up', shortName: '↑'},
-        {name: 'Right', code: 'KC_RGHT', keys: 'right', shortName: '→'},
+        {name: 'Trái', code: 'KC_LEFT', keys: 'left', shortName: '←'},
+        {name: 'Xuống', code: 'KC_DOWN', keys: 'down', shortName: '↓'},
+        {name: 'Lên', code: 'KC_UP', keys: 'up', shortName: '↑'},
+        {name: 'Phải', code: 'KC_RGHT', keys: 'right', shortName: '→'},
       ],
     },
     {
@@ -913,24 +913,24 @@ export function getKeycodes(): IKeycodeMenu[] {
       ],
     },
     {
-      label: 'Media',
+      label: 'Mục phương tiện',
       width: 'label',
       keycodes: [
-        {name: 'Vol -', code: 'KC_VOLD', title: 'Volume Down'},
-        {name: 'Vol +', code: 'KC_VOLU', title: 'Volume Up'},
-        {name: 'Mute', code: 'KC_MUTE', title: 'Mute Audio'},
-        {name: 'Play', code: 'KC_MPLY', title: 'Play/Pause'},
-        {name: 'Media Stop', code: 'KC_MSTP', title: 'Media Stop'},
-        {name: 'Previous', code: 'KC_MPRV', title: 'Media Previous'},
-        {name: 'Next', code: 'KC_MNXT', title: 'Media Next'},
-        {name: 'Rewind', code: 'KC_MRWD', title: 'Rewind'},
-        {name: 'Fast Forward', code: 'KC_MFFD', title: 'Fast Forward'},
-        {name: 'Select', code: 'KC_MSEL', title: 'Media Select'},
-        {name: 'Eject', code: 'KC_EJCT', title: 'Media Eject'},
+        {name: 'Giảm âm lượng', code: 'KC_VOLD', title: 'Giảm âm lượng'},
+        {name: 'Tăng âm lượng', code: 'KC_VOLU', title: 'Tăng âm lượng'},
+        {name: 'Im lặng', code: 'KC_MUTE', title: 'Tắt tiếng âm thanh'},
+        {name: 'Phát', code: 'KC_MPLY', title: 'Phát/Tạm dừng'},
+        {name: 'Dừng', code: 'KC_MSTP', title: 'Dừng bài hát'},
+        {name: 'Trở lại', code: 'KC_MPRV', title: 'Trở lại bài hát trước'},
+        {name: 'Tiếp theo', code: 'KC_MNXT', title: 'Bài hát tiếp theo'},
+        {name: 'Tua ngược', code: 'KC_MRWD', title: 'Tua ngược bài hát'},
+        {name: 'Tua nhanh', code: 'KC_MFFD', title: 'Tua nhanh bài hát'},
+        {name: 'Chọn', code: 'KC_MSEL', title: 'Chọn phương tiện'},
+        {name: 'Đẩy ổ đĩa', code: 'KC_EJCT', title: 'Đẩy ổ đĩa ra'},
       ],
     },
     {
-      label: 'Macro',
+      label: 'Mục Macro',
       width: 'label',
       keycodes: [
         {name: 'M0', code: 'MACRO00', title: 'Macro 0'},
@@ -1089,7 +1089,7 @@ export function getKeycodes(): IKeycodeMenu[] {
       ],
     },
     {
-      label: 'Special',
+      label: 'Mục đặc biệt',
       width: 'label',
       keycodes: [
         {name: '~', code: 'KC_TILD', keys: '`'},
@@ -1162,7 +1162,7 @@ export function getKeycodes(): IKeycodeMenu[] {
           code: 'KC_SFTENT',
           title: 'Right Shift when held, Enter when tapped',
         },
-        {name: 'Reset', code: 'RESET', title: 'Reset the keyboard'},
+        {name: 'Khởi động lại', code: 'RESET', title: 'Khởi động lại bàn phím'},
         {name: 'Debug', code: 'DEBUG', title: 'Toggle debug mode'},
         {
           name: 'Toggle NKRO',
@@ -1261,7 +1261,7 @@ export function getKeycodes(): IKeycodeMenu[] {
     },
     /* These are for controlling the original backlighting and bottom RGB. */
     {
-      label: 'QMK Lighting',
+      label: 'Mục QMK Lighting',
       width: 'label',
       keycodes: [
         {name: 'BL Toggle', code: 'BL_TOGG'},

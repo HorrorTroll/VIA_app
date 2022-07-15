@@ -18,9 +18,9 @@ import {getSelectedDefinition} from 'src/store/definitionsSlice';
 import type {FC} from 'react';
 
 export const Category = {
-  General: {label: 'General', Menu: GeneralPane},
+  General: {label: 'Mục chung', Menu: GeneralPane},
   Layout: {label: 'Layout', Menu: LayoutPane},
-  Advanced: {label: 'Advanced', Menu: AdvancedPane},
+  Advanced: {label: 'Mục nâng cao', Menu: AdvancedPane},
 };
 
 const LightingPane = styled(CenterPane)`

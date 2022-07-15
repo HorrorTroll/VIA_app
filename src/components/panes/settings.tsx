@@ -47,7 +47,7 @@ export const Settings = () => {
       <OverflowCell>
         <Container>
           <ControlRow>
-            <Label>Show Design tab</Label>
+            <Label>Hiển thị mục Thiết kế</Label>
             <Detail>
               <AccentSlider
                 onChange={() => dispatch(toggleCreatorMode())}
@@ -56,7 +56,7 @@ export const Settings = () => {
             </Detail>
           </ControlRow>
           <ControlRow>
-            <Label>Fast Key Mapping</Label>
+            <Label>Key Mapping nhanh</Label>
             <Detail>
               <AccentSlider
                 onChange={() => dispatch(toggleFastRemap())}
