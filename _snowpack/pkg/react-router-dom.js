@@ -1,5 +1,5 @@
-import {_ as _inheritsLoose, c as createBrowserHistory, R as Router, a as createHashHistory, b as context, i as invariant, d as createLocation, e as createPath, m as matchPath} from "./common/react-router-dc90cdc7.js";
-export {f as Route, S as Switch} from "./common/react-router-dc90cdc7.js";
+import {_ as _inheritsLoose, c as createBrowserHistory, R as Router, a as createHashHistory, b as context, i as invariant, d as createLocation, m as matchPath} from "./common/react-router-7a0da010.js";
+export {e as Route, S as Switch} from "./common/react-router-7a0da010.js";
 import {r as react} from "./common/index-3dfaa72e.js";
 import "./common/index-ce016b4a.js";
 import {b as _objectWithoutPropertiesLoose, _ as _extends} from "./common/objectWithoutPropertiesLoose-bfa49dda.js";
@@ -20,7 +20,7 @@ var BrowserRouter = /* @__PURE__ */ function(_React$Component) {
   }
   var _proto = BrowserRouter2.prototype;
   _proto.render = function render() {
-    return /* @__PURE__ */ react.createElement(Router, {
+    return react.createElement(Router, {
       history: this.history,
       children: this.props.children
     });
@@ -40,7 +40,7 @@ var HashRouter = /* @__PURE__ */ function(_React$Component) {
   }
   var _proto = HashRouter2.prototype;
   _proto.render = function render() {
-    return /* @__PURE__ */ react.createElement(Router, {
+    return react.createElement(Router, {
       history: this.history,
       children: this.props.children
     });
@@ -86,11 +86,11 @@ var LinkAnchor = forwardRef(function(_ref, forwardedRef) {
   } else {
     props.ref = innerRef;
   }
-  return /* @__PURE__ */ react.createElement("a", props);
+  return react.createElement("a", props);
 });
 var Link = forwardRef(function(_ref2, forwardedRef) {
   var _ref2$component = _ref2.component, component = _ref2$component === void 0 ? LinkAnchor : _ref2$component, replace = _ref2.replace, to = _ref2.to, innerRef = _ref2.innerRef, rest = _objectWithoutPropertiesLoose(_ref2, ["component", "replace", "to", "innerRef"]);
-  return /* @__PURE__ */ react.createElement(context.Consumer, null, function(context2) {
+  return react.createElement(context.Consumer, null, function(context2) {
     !context2 ? invariant(false) : void 0;
     var history = context2.history;
     var location = normalizeToLocation(resolveToLocation(to, context2.location), context2.location);
@@ -99,8 +99,7 @@ var Link = forwardRef(function(_ref2, forwardedRef) {
       href,
       navigate: function navigate() {
         var location2 = resolveToLocation(to, context2.location);
-        var isDuplicateNavigation = createPath(context2.location) === createPath(normalizeToLocation(location2));
-        var method = replace || isDuplicateNavigation ? history.replace : history.push;
+        var method = replace ? history.replace : history.push;
         method(location2);
       }
     });
@@ -109,7 +108,7 @@ var Link = forwardRef(function(_ref2, forwardedRef) {
     } else {
       props.innerRef = innerRef;
     }
-    return /* @__PURE__ */ react.createElement(component, props);
+    return react.createElement(component, props);
   });
 });
 var forwardRefShim$1 = function forwardRefShim3(C) {
@@ -129,7 +128,7 @@ function joinClassnames() {
 }
 var NavLink = forwardRef$1(function(_ref, forwardedRef) {
   var _ref$ariaCurrent = _ref["aria-current"], ariaCurrent = _ref$ariaCurrent === void 0 ? "page" : _ref$ariaCurrent, _ref$activeClassName = _ref.activeClassName, activeClassName = _ref$activeClassName === void 0 ? "active" : _ref$activeClassName, activeStyle = _ref.activeStyle, classNameProp = _ref.className, exact = _ref.exact, isActiveProp = _ref.isActive, locationProp = _ref.location, sensitive = _ref.sensitive, strict = _ref.strict, styleProp = _ref.style, to = _ref.to, innerRef = _ref.innerRef, rest = _objectWithoutPropertiesLoose(_ref, ["aria-current", "activeClassName", "activeStyle", "className", "exact", "isActive", "location", "sensitive", "strict", "style", "to", "innerRef"]);
-  return /* @__PURE__ */ react.createElement(context.Consumer, null, function(context2) {
+  return react.createElement(context.Consumer, null, function(context2) {
     !context2 ? invariant(false) : void 0;
     var currentLocation = locationProp || context2.location;
     var toLocation = normalizeToLocation(resolveToLocation(to, currentLocation), currentLocation);
@@ -142,12 +141,8 @@ var NavLink = forwardRef$1(function(_ref, forwardedRef) {
       strict
     }) : null;
     var isActive = !!(isActiveProp ? isActiveProp(match, currentLocation) : match);
-    var className = typeof classNameProp === "function" ? classNameProp(isActive) : classNameProp;
-    var style = typeof styleProp === "function" ? styleProp(isActive) : styleProp;
-    if (isActive) {
-      className = joinClassnames(className, activeClassName);
-      style = _extends({}, style, activeStyle);
-    }
+    var className = isActive ? joinClassnames(classNameProp, activeClassName) : classNameProp;
+    var style = isActive ? _extends({}, styleProp, {}, activeStyle) : styleProp;
     var props = _extends({
       "aria-current": isActive && ariaCurrent || null,
       className,
@@ -159,7 +154,7 @@ var NavLink = forwardRef$1(function(_ref, forwardedRef) {
     } else {
       props.innerRef = innerRef;
     }
-    return /* @__PURE__ */ react.createElement(Link, props);
+    return react.createElement(Link, props);
   });
 });
 export {HashRouter, Link};
