@@ -81,6 +81,6 @@ export default {
     /* ... */
   },
   buildOptions: {
-    /* ... */
+    baseUrl: '/VIA_app'
   },
 };

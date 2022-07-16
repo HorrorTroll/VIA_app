@@ -1,16 +1,20 @@
 {
+  "name": "horrortroll-via-app",
+  "version": "0.1.0",
+  "homepage": "https://horrortroll.github.io/VIA_app",
+  "private": true,
+  "license": "GPL-3.0-only",
   "scripts": {
     "start": "concurrently --names \"snowpack-dev,azure-fn-dev\" -c \"bgBlue,bgMagenta\" \"yarn dev\" \"npm --prefix api start\"",
     "dev": "node scripts/build-definitions.js && snowpack dev",
-    "build": "via-keyboards public/definitions && snowpack build",
+    "build": "set NODE_OPTIONS=--openssl-legacy-provider && via-keyboards public/definitions && snowpack build",
     "test": "web-test-runner \"src/**/*.test.tsx\"",
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",
     "lint": "prettier --check \"src/**/*.{js,jsx,ts,tsx}\"",
-    "build-azure": "yarn remove via-keyboards && yarn add https://github.com/the-via/keyboards.git && yarn build",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "cleanup": "rm -rf node_modules/.cache/gh-pages && rm -rf build",
+    "build-azure": "yarn remove via-keyboards && yarn add https://github.com/jpe230/via-keyboards.git && yarn build",
+    "build-gh": "yarn run cleanup && yarn build && gh-pages -d build"
   },
-  "homepage": "https://horrortroll.github.io/VIA_app",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.3",
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
@@ -23,7 +27,6 @@
     "concurrency": "^0.1.4",
     "connected-react-router": "^6.9.1",
     "downshift": "^6.1.7",
-    "gh-pages": "^4.0.0",
     "json-stringify-pretty-compact": "^3.0.0",
     "lodash.partition": "^4.6.0",
     "pelpi": "https://github.com/the-via/pelpi.git#728a945c7fdf6300e026a3c6e258d4a5eb1e5c9b",
@@ -41,7 +44,7 @@
     "styled-components": "^5.3.5",
     "ts-node": "^10.4.0",
     "use-resize-observer": "^8.0.0",
-    "via-keyboards": "https://github.com/the-via/keyboards.git",
+    "via-keyboards": "https://github.com/HorrorTroll/VIA_keyboards.git",
     "via-reader": "https://github.com/the-via/reader.git#ed2d5eb1811205a393c3f3d0eaa7b5461db3db88"
   },
   "devDependencies": {
@@ -67,6 +70,7 @@
     "@web/test-runner": "^0.13.3",
     "chai": "^4.3.4",
     "concurrently": "^7.1.0",
+    "gh-pages": "^4.0.0",
     "http2-proxy": "^5.0.53",
     "node-fetch": "^2.6.1",
     "prettier": "^2.2.1",
