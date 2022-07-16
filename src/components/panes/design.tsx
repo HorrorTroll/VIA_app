@@ -238,29 +238,20 @@ export const DesignTab: FC = () => {
       <OverflowCell>
         <Container>
           <ControlRow>
-            <Label>Load Draft Definition</Label>
+            <Label>Nạp bản thiết kế</Label>
             <Detail>
               <AccentUploadButton
                 onLoad={(file) =>
                   importDefinition(file, definitionVersion, dispatch, setErrors)
                 }
               >
-                Load
+                Nạp
               </AccentUploadButton>
-            </Detail>
-          </ControlRow>
-          <ControlRow>
-            <Label>Use V3 definitions (via/next)</Label>
-            <Detail>
-              <AccentSlider
-                isChecked={definitionVersion === 'v3'}
-                onChange={(val) => dispatch(selectVersion(val ? 'v2' : 'v3'))}
-              />
             </Detail>
           </ControlRow>
           {definition && (
             <ControlRow>
-              <Label>Shown Keyboard Definition</Label>
+              <Label>Hiển thị Layout của bản thiết kế bàn phím</Label>
               <Detail>
                 <AccentSelect
                   onChange={(option) => {
@@ -288,7 +279,7 @@ export const DesignTab: FC = () => {
           )}
           {definition && (
             <ControlRow>
-              <Label>Show Matrix</Label>
+              <Label>Hiển thị Matrix</Label>
               <Detail>
                 <AccentSlider isChecked={showMatrix} onChange={setShowMatrix} />
               </Detail>
@@ -300,9 +291,9 @@ export const DesignTab: FC = () => {
             </IndentedControlRow>
           ))}
           <ControlRow>
-            <Label>Draft Definitions</Label>
+            <Label>Bản thiết kế</Label>
             <Detail>
-              {Object.values(versionDefinitions).length} Definitions
+              {Object.values(versionDefinitions).length} Bản thiết kế
             </Detail>
           </ControlRow>
           {versionDefinitions.map((definition) => {

@@ -152,7 +152,7 @@ export const Pane: FC = () => {
     return KeycodeCategories.filter(
       maybeFilter(
         keycodes === KeycodeType.QMK,
-        ({label}) => label !== 'QMK Lighting',
+        ({label}) => label !== 'Mục hiệu ứng LED',
       ),
     )
       .filter(
@@ -164,7 +164,7 @@ export const Pane: FC = () => {
       .filter(
         maybeFilter(
           typeof customKeycodes !== 'undefined',
-          ({label}) => label !== 'Custom',
+          ({label}) => label !== 'Mục tùy chọn',
         ),
       );
   };

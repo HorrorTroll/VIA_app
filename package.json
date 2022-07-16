@@ -11,9 +11,8 @@
     "test": "web-test-runner \"src/**/*.test.tsx\"",
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",
     "lint": "prettier --check \"src/**/*.{js,jsx,ts,tsx}\"",
-    "cleanup": "rm -rf node_modules/.cache/gh-pages && rm -rf build",
     "build-azure": "yarn remove via-keyboards && yarn add https://github.com/jpe230/via-keyboards.git && yarn build",
-    "build-gh": "yarn run cleanup && yarn build && gh-pages -d build"
+    "build-gh": "yarn build && gh-pages -d build"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.3",

@@ -219,14 +219,14 @@ export const Test: FC = () => {
         <OverflowCell>
           <Container>
             <ControlRow>
-              <Label>Reset Keyboard</Label>
+              <Label>Thử phím lại</Label>
               <Detail>
-                <AccentButton onClick={onClickHandler}>Reset</AccentButton>
+                <AccentButton onClick={onClickHandler}>Thử lại</AccentButton>
               </Detail>
             </ControlRow>
             {canUseMatrixState && selectedDefinition ? (
               <ControlRow>
-                <Label>Test Matrix</Label>
+                <Label>Thử phím theo Matrix</Label>
                 <Detail>
                   <AccentSlider
                     isChecked={isTestMatrixEnabled}

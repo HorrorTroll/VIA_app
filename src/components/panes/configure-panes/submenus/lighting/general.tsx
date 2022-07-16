@@ -26,12 +26,12 @@ const BacklightControls: [
 ][] = [
   [
     LightingValue.BACKLIGHT_BRIGHTNESS,
-    'Độ sáng',
+    'Độ sáng LED nền đơn sắc',
     {type: 'range', min: 0, max: 255},
   ],
   [
     LightingValue.BACKLIGHT_EFFECT,
-    'Hiệu ứng',
+    'Hiệu ứng LED nền đơn sắc',
     {
       type: 'select',
       getOptions: (definition: VIADefinitionV2 | VIADefinitionV3) =>

@@ -9,5 +9,5 @@ const SvgIcLightbulbOutline24Px: React.VFC<{}> = (props) => (
   </svg>
 );
 
-export const title = 'Lighting';
+export const title = 'Hiệu ứng LED';
 export const component = SvgIcLightbulbOutline24Px;
