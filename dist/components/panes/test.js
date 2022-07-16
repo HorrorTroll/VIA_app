@@ -148,9 +148,9 @@ export const Test = () => {
     pressedKeys,
     matrixKeycodes: isTestMatrixEnabled ? [] : matrixKeycodes,
     containerDimensions: dimensions
-  })), /* @__PURE__ */ React.createElement(OverflowCell, null, /* @__PURE__ */ React.createElement(Container, null, /* @__PURE__ */ React.createElement(ControlRow, null, /* @__PURE__ */ React.createElement(Label, null, "Reset Keyboard"), /* @__PURE__ */ React.createElement(Detail, null, /* @__PURE__ */ React.createElement(AccentButton, {
+  })), /* @__PURE__ */ React.createElement(OverflowCell, null, /* @__PURE__ */ React.createElement(Container, null, /* @__PURE__ */ React.createElement(ControlRow, null, /* @__PURE__ */ React.createElement(Label, null, "Thử phím lại"), /* @__PURE__ */ React.createElement(Detail, null, /* @__PURE__ */ React.createElement(AccentButton, {
     onClick: onClickHandler
-  }, "Reset"))), canUseMatrixState && selectedDefinition ? /* @__PURE__ */ React.createElement(ControlRow, null, /* @__PURE__ */ React.createElement(Label, null, "Test Matrix"), /* @__PURE__ */ React.createElement(Detail, null, /* @__PURE__ */ React.createElement(AccentSlider, {
+  }, "Thử lại"))), canUseMatrixState && selectedDefinition ? /* @__PURE__ */ React.createElement(ControlRow, null, /* @__PURE__ */ React.createElement(Label, null, "Thử phím theo Matrix"), /* @__PURE__ */ React.createElement(Detail, null, /* @__PURE__ */ React.createElement(AccentSlider, {
     isChecked: isTestMatrixEnabled,
     onChange: (val) => {
       startTest = val;

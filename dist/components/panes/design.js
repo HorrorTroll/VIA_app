@@ -32,7 +32,7 @@ import {selectDevice, ensureSupportedId} from "../../store/devicesSlice.js";
 import {reloadConnectedDevices} from "../../store/devicesThunks.js";
 import {useAppSelector} from "../../store/hooks.js";
 import {getCustomDefinitions, loadDefinition} from "../../store/definitionsSlice.js";
-import {getSelectedVersion, selectVersion} from "../../store/designSlice.js";
+import {getSelectedVersion} from "../../store/designSlice.js";
 const DesignErrorMessage = styled(ErrorMessage)`
   margin: 0;
   font-style: italic;
@@ -166,12 +166,9 @@ export const DesignTab = () => {
     }
   }, /* @__PURE__ */ React.createElement(FontAwesomeIcon, {
     icon: faUpload
-  }))), /* @__PURE__ */ React.createElement(OverflowCell, null, /* @__PURE__ */ React.createElement(Container, null, /* @__PURE__ */ React.createElement(ControlRow, null, /* @__PURE__ */ React.createElement(Label, null, "Load Draft Definition"), /* @__PURE__ */ React.createElement(Detail, null, /* @__PURE__ */ React.createElement(AccentUploadButton, {
+  }))), /* @__PURE__ */ React.createElement(OverflowCell, null, /* @__PURE__ */ React.createElement(Container, null, /* @__PURE__ */ React.createElement(ControlRow, null, /* @__PURE__ */ React.createElement(Label, null, "Nạp bản thiết kế"), /* @__PURE__ */ React.createElement(Detail, null, /* @__PURE__ */ React.createElement(AccentUploadButton, {
     onLoad: (file) => importDefinition(file, definitionVersion, dispatch, setErrors)
-  }, "Load"))), /* @__PURE__ */ React.createElement(ControlRow, null, /* @__PURE__ */ React.createElement(Label, null, "Use V3 definitions (via/next)"), /* @__PURE__ */ React.createElement(Detail, null, /* @__PURE__ */ React.createElement(AccentSlider, {
-    isChecked: definitionVersion === "v3",
-    onChange: (val) => dispatch(selectVersion(val ? "v2" : "v3"))
-  }))), definition && /* @__PURE__ */ React.createElement(ControlRow, null, /* @__PURE__ */ React.createElement(Label, null, "Shown Keyboard Definition"), /* @__PURE__ */ React.createElement(Detail, null, /* @__PURE__ */ React.createElement(AccentSelect, {
+  }, "Nạp"))), definition && /* @__PURE__ */ React.createElement(ControlRow, null, /* @__PURE__ */ React.createElement(Label, null, "Hiển thị Layout của bản thiết kế bàn phím"), /* @__PURE__ */ React.createElement(Detail, null, /* @__PURE__ */ React.createElement(AccentSelect, {
     onChange: (option) => {
       setSelectedOptionKeys(() => []);
       if (option) {
@@ -185,10 +182,10 @@ export const DesignTab = () => {
     onLayoutChange: (newSelectedOptionKeys) => {
       setSelectedOptionKeys(newSelectedOptionKeys);
     }
-  }), definition && /* @__PURE__ */ React.createElement(ControlRow, null, /* @__PURE__ */ React.createElement(Label, null, "Show Matrix"), /* @__PURE__ */ React.createElement(Detail, null, /* @__PURE__ */ React.createElement(AccentSlider, {
+  }), definition && /* @__PURE__ */ React.createElement(ControlRow, null, /* @__PURE__ */ React.createElement(Label, null, "Hiển thị Matrix"), /* @__PURE__ */ React.createElement(Detail, null, /* @__PURE__ */ React.createElement(AccentSlider, {
     isChecked: showMatrix,
     onChange: setShowMatrix
-  }))), errors.map((error) => /* @__PURE__ */ React.createElement(IndentedControlRow, null, /* @__PURE__ */ React.createElement(DesignErrorMessage, null, error))), /* @__PURE__ */ React.createElement(ControlRow, null, /* @__PURE__ */ React.createElement(Label, null, "Draft Definitions"), /* @__PURE__ */ React.createElement(Detail, null, Object.values(versionDefinitions).length, " Definitions")), versionDefinitions.map((definition2) => {
+  }))), errors.map((error) => /* @__PURE__ */ React.createElement(IndentedControlRow, null, /* @__PURE__ */ React.createElement(DesignErrorMessage, null, error))), /* @__PURE__ */ React.createElement(ControlRow, null, /* @__PURE__ */ React.createElement(Label, null, "Bản thiết kế"), /* @__PURE__ */ React.createElement(Detail, null, Object.values(versionDefinitions).length, " Bản thiết kế")), versionDefinitions.map((definition2) => {
     return /* @__PURE__ */ React.createElement(IndentedControlRow, null, /* @__PURE__ */ React.createElement(SubLabel, null, definition2[definitionVersion].name), /* @__PURE__ */ React.createElement(Detail, null, "0x", definition2[definitionVersion].vendorProductId.toString(16).toUpperCase()));
   }))));
 };

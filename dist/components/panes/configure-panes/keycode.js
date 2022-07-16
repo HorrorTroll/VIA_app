@@ -125,7 +125,7 @@ export const Pane = () => {
     }
     const {lighting, customKeycodes} = selectedDefinition;
     const {keycodes} = getLightingDefinition(lighting);
-    return KeycodeCategories.filter(maybeFilter(keycodes === KeycodeType.QMK, ({label}) => label !== "QMK Lighting")).filter(maybeFilter(keycodes === KeycodeType.WT, ({label}) => label !== "Lighting")).filter(maybeFilter(typeof customKeycodes !== "undefined", ({label}) => label !== "Custom"));
+    return KeycodeCategories.filter(maybeFilter(keycodes === KeycodeType.QMK, ({label}) => label !== "Mục hiệu ứng LED")).filter(maybeFilter(keycodes === KeycodeType.WT, ({label}) => label !== "Lighting")).filter(maybeFilter(typeof customKeycodes !== "undefined", ({label}) => label !== "Mục tùy chọn"));
   };
   const renderMacroError = () => {
     return /* @__PURE__ */ React.createElement(ErrorMessage, null, "It looks like your current firmware doesn't support macros.", " ", /* @__PURE__ */ React.createElement(Link, {
